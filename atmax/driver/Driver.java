@@ -11,10 +11,10 @@ public class Driver {
 	
 		ApplicationContext ac = new ClassPathXmlApplicationContext("beans.xml");
 		AtmaxSerivce service =  ac.getBean("service",AtmaxServiceImpl.class);
-		service.insert("Tushar", "Sharma");
-		//service.select("Vansh");
-		//service.selectAll();
-		//service.delete("Sahil");
-		//service.updateFirstName("Vansh","Akshay");
+		service.insert("Ram", "Gopal");
+		service.select("Tushar");
+		service.selectAll();
+		service.delete("Amit");
+		service.updateFirstName("Tushar","Sahil");
 	}
 }

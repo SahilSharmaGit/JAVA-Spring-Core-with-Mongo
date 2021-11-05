@@ -24,10 +24,14 @@ public class DMLDaoImpl implements DMLDao {
 	}
 
 	public DBCollection createDBConnection() {
-		getConnectedWithMongoDB();
-		DB db = client.getDB("atmaxdb");
-		db.createCollection("atmaxdata", null);
-		collection = db.getCollection("atmaxdata");
+		if(collection == null)
+		{
+			getConnectedWithMongoDB();
+			DB db = client.getDB("atmaxdb");
+			db.createCollection("atmaxdata", null);
+			collection = db.getCollection("atmaxdata");
+			return collection;
+		}
 		return collection;
 	}
 
